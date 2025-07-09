@@ -4,28 +4,25 @@ import "./App.css"; // Importando o CSS para estilização
 import TodoForm from "./components/TodoForm"; // Importando o componente de formulário
 
 function App() {
-
-  const[todos, setTodos] = useState([
-
-    { 
-      id: 1, 
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
       text: "Estudar React",
       category: "Estudos",
       iscompleted: false,
-     },
-    { 
-      id: 2, 
+    },
+    {
+      id: 2,
       text: "Ir para a academia ",
       category: "Pessoal",
       iscompleted: false,
-     },
-    { 
-      id: 3, 
+    },
+    {
+      id: 3,
       text: "Meeting com a equipe",
       category: "Trabalho",
       iscompleted: false,
-     },
-
+    },
   ]);
 
   return (
@@ -33,11 +30,10 @@ function App() {
       <h1>Lista de Tarefas</h1>
       <div className="todo-list">
         {todos.map((todo) => (
-          <Todo todo={todo}/> 
+          <Todo key={todo.id} todo={todo} />
         ))}
       </div>
       <TodoForm />
-
     </div>
   );
 }

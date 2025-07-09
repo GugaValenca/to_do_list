@@ -11,8 +11,13 @@ const TodoForm = () => {
   return <div className="todo-form">
     <h2>Criar Tarefa</h2>
     <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Digite o Título" onChange={(e) => }/>
-        <select>
+        <input 
+        type="text" 
+        placeholder="Digite o Título" 
+        value={value} 
+        onChange={(e) => setValue(e.target.value)} />
+
+        <select value={category} onChange={(e) => setCategory(e.target.value)} />
             <option value="">Selecione uma categoria</option>
             <option value="Trabalho">Trabalho</option>
             <option value="Pessoal">Pessoal</option>
